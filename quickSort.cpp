@@ -9,7 +9,9 @@ vector<int> quickSort(vector<int> nums)
     if (size < 2)
         return nums;
 
-    int pivot = nums[0];
+    int pivotIndex = rand() % size;
+    int pivot = nums[pivotIndex];
+
     vector<int> less;
     vector<int> greater;
 
