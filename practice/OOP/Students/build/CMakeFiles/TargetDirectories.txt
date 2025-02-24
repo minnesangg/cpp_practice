@@ -1,3 +1,0 @@
-D:/PracticeOOP/Students/build/CMakeFiles/StudentManagement.dir
-D:/PracticeOOP/Students/build/CMakeFiles/edit_cache.dir
-D:/PracticeOOP/Students/build/CMakeFiles/rebuild_cache.dir
