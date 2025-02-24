@@ -1,0 +1,3 @@
+D:/PracticeOOP/BooksStore/build/CMakeFiles/BookStore.dir
+D:/PracticeOOP/BooksStore/build/CMakeFiles/edit_cache.dir
+D:/PracticeOOP/BooksStore/build/CMakeFiles/rebuild_cache.dir

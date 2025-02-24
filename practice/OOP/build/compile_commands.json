@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/PracticeOOP/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/StudentManagement.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\StudentManagement.dir\\src\\main.cpp.obj -c D:\\PracticeOOP\\Students\\src\\main.cpp",
+  "file": "D:/PracticeOOP/Students/src/main.cpp",
+  "output": "CMakeFiles/StudentManagement.dir/src/main.cpp.obj"
+},
+{
+  "directory": "D:/PracticeOOP/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/StudentManagement.dir/includes_CXX.rsp -g -std=gnu++14 -o CMakeFiles\\StudentManagement.dir\\src\\Student.cpp.obj -c D:\\PracticeOOP\\Students\\src\\Student.cpp",
+  "file": "D:/PracticeOOP/Students/src/Student.cpp",
+  "output": "CMakeFiles/StudentManagement.dir/src/Student.cpp.obj"
+}
+]

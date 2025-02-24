@@ -1,0 +1,3 @@
+D:/PracticeOOP/build/CMakeFiles/StudentManagement.dir
+D:/PracticeOOP/build/CMakeFiles/edit_cache.dir
+D:/PracticeOOP/build/CMakeFiles/rebuild_cache.dir
