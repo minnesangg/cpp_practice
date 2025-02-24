@@ -1,3 +1,9 @@
 .vscode/
 *.exe
 c++.code-workspace
+
+practice/OOP/BooksStore/build/
+practice/OOP/Students/build/
+practice/OOP/bookstore
+practice/OOP/build/
+
