@@ -3,7 +3,6 @@
 
 using namespace std;
 
-// Конструктор реализован здесь
 Book::Book(string author, string title, float price, int quantity)
     : author(author), title(title), price(price), quantity(quantity) {}
 
