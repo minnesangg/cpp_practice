@@ -12,6 +12,10 @@ Employee::Employee(std::string name, int age, int salary){
     this->salary = salary;
 }
 
+Employee::~Employee(){
+    std::cout << "Employee " << name << " is deleted" << std::endl;
+}
+
 void Employee::set_name(std::string name){
     this->name = name;
 }

@@ -12,7 +12,8 @@ protected:
 public:
     Employee();
     Employee(std::string name, int age, int salary);
-    ~Employee() {};
+    ~Employee();
+    
     void set_name(std::string name);
     void set_age(int age);
     void set_salary(int salary);
