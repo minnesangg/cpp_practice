@@ -1,3 +1,0 @@
-D:/c++/practice/OOP/Vehicles/build/CMakeFiles/Vehicles.dir
-D:/c++/practice/OOP/Vehicles/build/CMakeFiles/edit_cache.dir
-D:/c++/practice/OOP/Vehicles/build/CMakeFiles/rebuild_cache.dir
