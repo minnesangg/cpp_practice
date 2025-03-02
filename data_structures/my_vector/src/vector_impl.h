@@ -108,6 +108,125 @@ namespace minnesang {
         size--;
     }
 
+    template <typename T>
+    const T& Vector<T>::front() {
+        if(size == 0){
+            throw std::runtime_error("Vector is empty");
+        } else{
+            return arr[0];
+        }
+    }
+
+    template <typename T>
+    const T& Vector<T>::back() {
+        if(size == 0){
+            throw std::runtime_error("Vector is empty");
+        } else {
+            return arr[size-1];
+        }
+    }
+
+    template <typename T>
+    bool Vector<T>::is_sorted_increasly() const {
+        for(size_t i  = 0; i < size - 1; i++){
+            if(arr[i] > arr[i+1]){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    template <typename T>
+    bool Vector<T>::is_sorted_decreasly() const {
+        for(size_t i = 0; i < size - 1; i++) {
+            if(arr[i] < arr[i + 1]) {
+                return false; 
+            }
+        }
+        return true;
+    }
+
+    template <typename T>
+    bool Vector<T>::is_sorted() const {
+        if (!(is_sorted_increasly() || is_sorted_decreasly())) {
+            throw std::runtime_error("Vector is not sorted");
+        } else {
+            return true;
+        }
+    }
+
+    template <typename T>
+    int Vector<T>::binary_search(const T& value) {
+        if (!is_sorted_increasly() && !is_sorted_decreasly()) {
+            throw std::runtime_error("Vector is not sorted");
+        }
+    
+        size_t left = 0;
+        size_t right = size - 1;
+        size_t mid = 0;
+    
+        bool is_increasing = is_sorted_increasly();
+    
+        while (left <= right) {
+            mid = left + (right - left) / 2;
+    
+            if (arr[mid] == value) {
+                return mid;  
+            }
+    
+            if (is_increasing) {
+                if (arr[mid] < value) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            } else {
+                if (arr[mid] > value) {
+                    left = mid + 1;
+                } else {
+                    right = mid - 1;
+                }
+            }
+        }
+    
+        return -1;  
+    }
+    
+    template <typename T>
+    void Vector<T>::quickSort(size_t left, size_t right) {
+        if (left >= right) {
+            return;  
+        }
+
+        int pivotIndex = left + (right - left) / 2;  
+        T pivot = arr[pivotIndex];
+
+        size_t i = left;
+        size_t j = right;
+
+        while (i <= j) {
+            while (arr[i] < pivot) {
+                i++;
+            }
+            while (arr[j] > pivot) {
+                j--;
+            }
+
+            if (i <= j) {
+                std::swap(arr[i], arr[j]);  
+                i++;
+                j--;
+            }
+        }
+
+        if (left < j) {
+            quickSort(left, j);
+        }
+        if (i < right) {
+            quickSort(i, right);
+        }
+    }
+
 } 
 
 #endif

@@ -29,6 +29,13 @@ namespace minnesang {
         void shrink_to_fit();
         void insert(size_t index, const T& value);
         void erase(size_t index);
+        const T& front();
+        const T& back();
+        bool is_sorted() const;
+        bool is_sorted_increasly() const;
+        bool is_sorted_decreasly() const;
+        int binary_search(const T& value);
+        void quickSort(size_t left, size_t right);
     };
 
 } 
