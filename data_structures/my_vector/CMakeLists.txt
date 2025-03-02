@@ -7,5 +7,5 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include_directories(src)
 
-add_executable(minnesang_vector main.cpp src/vector.h src/vector_impl.h)
+add_executable(minnesang_vector main.cpp src/mnsng_vector.h src/mnsng_vector_impl.h)
 

@@ -1,5 +1,5 @@
-#ifndef VECTOR_H
-#define VECTOR_H
+#ifndef MINNESANG_VECTOR_H
+#define MINNESANG_VECTOR_H
 
 #include <cstddef>
 #include <stdexcept>
@@ -24,22 +24,30 @@ namespace minnesang {
         T& operator[](size_t index);
         const T& operator[](size_t index) const;
         size_t get_size() const;
-        bool is_empty() const;
+        size_t get_capacity() const;
+        size_t index_of(const T& value) const;
         void clear();
+
         void shrink_to_fit();
+
         void insert(size_t index, const T& value);
         void erase(size_t index);
+
         const T& front();
         const T& back();
+
+        bool is_empty() const;
         bool is_sorted() const;
         bool is_sorted_increasly() const;
         bool is_sorted_decreasly() const;
+        bool contains(const T& value) const;
+
         int binary_search(const T& value);
         void quickSort(size_t left, size_t right);
     };
 
-} 
+}
 
-#include "vector_impl.h"
+#include "mnsng_vector_impl.h"
 
 #endif

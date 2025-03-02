@@ -1,5 +1,5 @@
-#ifndef VECTOR_IMPL_H
-#define VECTOR_IMPL_H
+#ifndef MINNESANG_VECTOR_IMPL_H
+#define MINNESANG_VECTOR_IMPL_H
 
 namespace minnesang {
 
@@ -13,6 +13,7 @@ namespace minnesang {
         delete[] arr;
     }
 
+
     template <typename T>
     void Vector<T>::resize(size_t new_capacity) {
         T* new_arr = new T[new_capacity];
@@ -25,6 +26,7 @@ namespace minnesang {
         arr = new_arr;
         capacity = new_capacity;
     }
+
 
     template <typename T>
     void Vector<T>::push_back(const T& value) {
@@ -64,8 +66,22 @@ namespace minnesang {
     }
 
     template <typename T>
-    bool Vector<T>::is_empty() const {
-        return size == 0;
+    size_t Vector<T>::get_capacity() const {
+        return capacity;
+    }
+
+    template <typename T>
+    size_t Vector<T>::index_of(const T& value) const {
+        if(contains(value)){
+            for(size_t i = 0; i < size; i++){
+                if(arr[i] == value){
+                    return i;
+                }
+            }
+        } else {
+            return -1;
+        }
+        return -1;
     }
 
     template <typename T>
@@ -73,12 +89,14 @@ namespace minnesang {
         size = 0;
     }
 
+
     template <typename T>
     void Vector<T>::shrink_to_fit() {
         if (capacity > size) {
             resize(size);
         }
     }
+
 
     template <typename T>
     void Vector<T>::insert(size_t index, const T& value) {
@@ -108,6 +126,7 @@ namespace minnesang {
         size--;
     }
 
+
     template <typename T>
     const T& Vector<T>::front() {
         if(size == 0){
@@ -126,57 +145,70 @@ namespace minnesang {
         }
     }
 
+
     template <typename T>
-    bool Vector<T>::is_sorted_increasly() const {
-        for(size_t i  = 0; i < size - 1; i++){
-            if(arr[i] > arr[i+1]){
-                return false;
-            }
-        }
-        return true;
+    bool Vector<T>::is_empty() const {
+        return size == 0;
     }
 
     template <typename T>
-    bool Vector<T>::is_sorted_decreasly() const {
-        for(size_t i = 0; i < size - 1; i++) {
-            if(arr[i] < arr[i + 1]) {
+    bool Vector<T>::is_sorted() const {
+        return is_sorted_increasly() || is_sorted_decreasly();
+    }    
+
+    template <typename T>
+    bool Vector<T>::is_sorted_increasly() const {
+        for (size_t i = 1; i < size; ++i) {
+            if (arr[i - 1] > arr[i]) {
                 return false; 
             }
         }
         return true;
     }
+    
+    template <typename T>
+    bool Vector<T>::is_sorted_decreasly() const {
+        for (size_t i = 1; i < size; ++i) {
+            if (arr[i - 1] < arr[i]) {
+                return false; 
+            }
+        }
+        return true;
+    }    
 
     template <typename T>
-    bool Vector<T>::is_sorted() const {
-        if (!(is_sorted_increasly() || is_sorted_decreasly())) {
-            throw std::runtime_error("Vector is not sorted");
-        } else {
-            return true;
+    bool Vector<T>::contains(const T& value) const {
+        for (size_t i = 0; i < size; i++) {
+            if (arr[i] == value) {
+                return true;
+            }
         }
+        return false;  
     }
+    
 
     template <typename T>
     int Vector<T>::binary_search(const T& value) {
         if (!is_sorted_increasly() && !is_sorted_decreasly()) {
             throw std::runtime_error("Vector is not sorted");
-        }
-    
+            }
+
         size_t left = 0;
         size_t right = size - 1;
-        size_t mid = 0;
-    
+        size_t mid;
+
         bool is_increasing = is_sorted_increasly();
-    
+
         while (left <= right) {
             mid = left + (right - left) / 2;
-    
+
             if (arr[mid] == value) {
-                return mid;  
+                return mid;
             }
-    
+
             if (is_increasing) {
                 if (arr[mid] < value) {
-                    left = mid + 1;
+                left = mid + 1;
                 } else {
                     right = mid - 1;
                 }
@@ -188,10 +220,10 @@ namespace minnesang {
                 }
             }
         }
-    
+
         return -1;  
     }
-    
+
     template <typename T>
     void Vector<T>::quickSort(size_t left, size_t right) {
         if (left >= right) {
@@ -226,7 +258,7 @@ namespace minnesang {
             quickSort(i, right);
         }
     }
-
+    
 } 
 
 #endif
