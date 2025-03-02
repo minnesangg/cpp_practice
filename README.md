@@ -9,7 +9,7 @@ This repository contains my educational projects that cover various aspects of O
 - Pointers and dynamic memory management  
 
 ### 🔹 **2. Data Structures**  
-- Custom implementations of linked lists, stacks, queues  
+- Custom implementations of linked lists, stacks, vector  
 - Hash tables, graphs  
 
 ### 🔹 **3. Algorithms**  
