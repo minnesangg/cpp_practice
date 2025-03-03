@@ -21,14 +21,6 @@ namespace minnesang {
         Vector(Vector<T>&& other) noexcept;
         ~Vector();
 
-        void push_back(const T& value);
-        void pop_back();
-        size_t get_size() const;
-        size_t get_capacity() const;
-        int index_of(const T& value) const;
-        void clear();
-
-
         T* begin();
         T* end();
         const T* begin() const;
@@ -38,7 +30,13 @@ namespace minnesang {
         T* rend();
         const T* rbegin() const;
         const T* rend() const;
-        
+
+        void push_back(const T& value);
+        void pop_back();
+        size_t get_size() const;
+        size_t get_capacity() const;
+        int index_of(const T& value) const;
+        void clear();
 
         T& operator[](size_t index);
         const T& operator[](size_t index) const;
@@ -51,6 +49,8 @@ namespace minnesang {
 
         void insert(size_t index, const T& value);
         void erase(size_t index);
+        void remove(const T& value);
+        void assign(size_t count, const T& value);
 
         const T& front();
         const T& back();

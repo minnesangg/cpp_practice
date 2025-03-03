@@ -215,6 +215,23 @@ namespace minnesang {
         size--;
     }
 
+    template<typename T>
+    void Vector<T>::remove(const T& value){
+        int index = index_of(value);
+        if(index != -1)
+            erase(static_cast<size_t>(index));
+    }
+
+    template<typename T>
+    void Vector<T>::assign(size_t count, const T& value){
+        clear;
+        resize(count);
+        for(size_t i = 0; i < count; i++){
+            arr[i] = value;
+        }
+        size = count;
+    }
+
 
     template <typename T>
     const T& Vector<T>::front() {
