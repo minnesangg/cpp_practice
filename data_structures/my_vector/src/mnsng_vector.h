@@ -17,16 +17,35 @@ namespace minnesang {
 
     public:
         Vector();
+        Vector(const Vector<T>& other);
+        Vector(Vector<T>&& other) noexcept;
         ~Vector();
 
         void push_back(const T& value);
         void pop_back();
-        T& operator[](size_t index);
-        const T& operator[](size_t index) const;
         size_t get_size() const;
         size_t get_capacity() const;
-        size_t index_of(const T& value) const;
+        int index_of(const T& value) const;
         void clear();
+
+
+        T* begin();
+        T* end();
+        const T* begin() const;
+        const T* end() const;
+        
+        T* rbegin();
+        T* rend();
+        const T* rbegin() const;
+        const T* rend() const;
+        
+
+        T& operator[](size_t index);
+        const T& operator[](size_t index) const;
+        Vector<T>& operator=(const Vector<T>& other);
+        Vector<T>& operator=(Vector<T>&& other) noexcept;
+        Vector<T> operator+(const Vector<T>& other) const;
+        Vector<T>& operator +=(const Vector<T>& other);
 
         void shrink_to_fit();
 
@@ -44,6 +63,7 @@ namespace minnesang {
 
         int binary_search(const T& value);
         void quickSort(size_t left, size_t right);
+        void reverse();
     };
 
 }

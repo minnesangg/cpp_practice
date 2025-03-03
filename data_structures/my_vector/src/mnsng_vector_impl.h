@@ -9,19 +9,64 @@ namespace minnesang {
     }
 
     template <typename T>
-    Vector<T>::~Vector() {
-        delete[] arr;
+    Vector<T>::Vector(const Vector<T>& other) 
+        : size(other.size), capacity(other.capacity), arr(new T[other.capacity]) {
+        std::copy(other.arr, other.arr + other.size, arr);
+    }
+
+    template <typename T>
+    Vector<T>::Vector(Vector<T>&& other) noexcept 
+        : size(other.size), capacity(other.capacity), arr(other.arr) {
+        other.arr = nullptr;
+        other.size = 0;
+        other.capacity = 0;
     }
 
 
     template <typename T>
-    void Vector<T>::resize(size_t new_capacity) {
-        T* new_arr = new T[new_capacity];
+    Vector<T>::~Vector() {
+        delete[] arr;
+    }
 
+    template <typename T>
+    T* Vector<T>::begin() { return arr; }
+    
+    template <typename T>
+    T* Vector<T>::end() { return arr + size; }
+    
+    template <typename T>
+    const T* Vector<T>::begin() const { return arr; }
+    
+    template <typename T>
+    const T* Vector<T>::end() const { return arr + size; }
+    
+    template <typename T>
+    T* Vector<T>::rbegin() { return arr + size - 1; }
+    
+    template <typename T>
+    T* Vector<T>::rend() { return arr - 1; }
+    
+    template <typename T>
+    const T* Vector<T>::rbegin() const { return arr + size - 1; }
+    
+    template <typename T>
+    const T* Vector<T>::rend() const { return arr - 1; }
+    
+
+    template <typename T>
+    void Vector<T>::resize(size_t new_capacity) {
+        if (new_capacity == 0) {
+            throw std::runtime_error("Capacity cannot be zero");
+        }
+        if (new_capacity < size) {
+            size = new_capacity;  
+        }
+    
+        T* new_arr = new T[new_capacity];
         for (size_t i = 0; i < size; i++) {
             new_arr[i] = arr[i];
         }
-
+    
         delete[] arr;
         arr = new_arr;
         capacity = new_capacity;
@@ -61,6 +106,54 @@ namespace minnesang {
     }
 
     template <typename T>
+    Vector<T>& Vector<T>::operator=(const Vector<T>& other) {
+        if (this != &other) {
+            delete[] arr;
+            size = other.size;
+            capacity = other.capacity;
+            arr = new T[capacity];
+            std::copy(other.arr, other.arr + size, arr);
+        }
+        return *this;
+    }
+
+    template <typename T>
+    Vector<T>& Vector<T>::operator=(Vector<T>&& other) noexcept {
+        if (this != &other) {
+            delete[] arr;
+            size = other.size;
+            capacity = other.capacity;
+            arr = other.arr;
+            other.arr = nullptr;
+            other.size = 0;
+            other.capacity = 0;
+        }
+        return *this;
+    }
+
+    template <typename T>
+    Vector<T> Vector<T>::operator+(const Vector<T>& other) const{
+        Vector<T> result;
+        result.resize(size + other.size);
+        for(size_t i = 0; i < size; i++){
+            result.push_back(arr[i]);
+        }
+        for(size_t i = 0; i < other.size; i++){
+            result.push_back(other[i]);
+        }
+        return result;
+    }
+
+    template <typename T>
+    Vector<T>& Vector<T>::operator+=(const Vector<T>& other){
+        resize(size + other.size);
+        for(size_t i = 0; i < other.size; i++){
+            push_back(other.arr[i]);
+        }
+        return *this;
+    }
+
+    template <typename T>
     size_t Vector<T>::get_size() const {
         return size;
     }
@@ -71,19 +164,15 @@ namespace minnesang {
     }
 
     template <typename T>
-    size_t Vector<T>::index_of(const T& value) const {
-        if(contains(value)){
-            for(size_t i = 0; i < size; i++){
-                if(arr[i] == value){
-                    return i;
-                }
+    int Vector<T>::index_of(const T& value) const {
+        for (size_t i = 0; i < size; i++) {
+            if (arr[i] == value) {
+                return static_cast<int>(i);
             }
-        } else {
-            return -1;
         }
-        return -1;
+        return -1; 
     }
-
+    
     template <typename T>
     void Vector<T>::clear() {
         size = 0;
@@ -259,6 +348,24 @@ namespace minnesang {
         }
     }
     
+    template <typename T>
+    void Vector<T>::reverse(){
+        Vector<T> reversed;
+        reversed.resize(size);
+        for(size_t i = size; i > 0; i--){
+            reversed.push_back(arr[i-1]);
+        }
+
+        delete[] arr;  
+        arr = reversed.arr;  
+        size = reversed.size;
+        capacity = reversed.capacity;
+    
+        reversed.arr = nullptr;  
+        reversed.size = 0;
+        reversed.capacity = 0;
+    }
+
 } 
 
 #endif

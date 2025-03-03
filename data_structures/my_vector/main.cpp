@@ -60,6 +60,10 @@ int main() {
             std::cout << "Value not found" << std::endl;
         }
 
+        std::cout << "Reversing vector: " << std::endl;
+        vec.reverse();
+        print_vector(vec);
+
         vec.clear();    // clearing 
         std::cout << "After clear: ";
         print_vector(vec);
