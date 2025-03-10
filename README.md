@@ -21,3 +21,6 @@ This repository contains my educational projects that cover various aspects of O
 - Creating and configuring CMakeLists.txt` 
 - Working with header and source files  
 
+### 🔹 **5. System programming and Win32 API**  
+- Creating Win32 API projects
+- Practice on system programming 
