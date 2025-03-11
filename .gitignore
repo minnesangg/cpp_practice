@@ -13,4 +13,8 @@ practice/OOP/Vehicles/build/
 practice/OOP/Cafe/build/
 practice/OOP/Farm/build/
 
+practice/task_manager/include/json.hpp
+practice/task_manager/build
+
+
 data_structures/my_vector/build/
