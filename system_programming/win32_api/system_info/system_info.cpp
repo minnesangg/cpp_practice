@@ -4,6 +4,7 @@
 using uint = unsigned int;
 
 namespace first_task {
+
     void directories(HANDLE hConsole, TCHAR* output) {
         TCHAR buffer[MAX_PATH];
     
@@ -44,6 +45,7 @@ namespace first_task {
 }
 
 namespace second_task {
+    
     void print_system_info(HANDLE hConsole, TCHAR* output) {
         SYSTEM_INFO sys_info;
         GetSystemInfo(&sys_info);
@@ -75,12 +77,8 @@ namespace second_task {
     }
 }
 
-namespace third_task {
-
-}
-
 void show_menu(HANDLE hConsole, TCHAR* output) {
-    const TCHAR *menu = TEXT("\n\t\tMENU\t\t\n1. First task\n2. Second task\n3. Third task\n4. Exit\n\n");
+    const TCHAR *menu = TEXT("\n\t\tMENU\t\t\n1. First task\n2. Second task\n3. Exit\n\n");
     WriteConsole(hConsole, menu, lstrlen(menu), NULL, NULL);
 }
 
@@ -109,9 +107,6 @@ int main() {
                 second_task::print_metrics(hConsole, output);
                 break;
             case 3:
-                WriteConsole(hConsole, TEXT("\nThird Task:\n"), 13, NULL, NULL);
-                break;
-            case 4:
                 WriteConsole(hConsole, TEXT("Closing program...\n"), 20, NULL, NULL);
                 return 0;
             default:
