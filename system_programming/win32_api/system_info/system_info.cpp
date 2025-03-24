@@ -47,7 +47,7 @@ namespace first_task {
 namespace second_task {
     
     void print_system_info(HANDLE hConsole, TCHAR* output) {
-        SYSTEM_INFO sys_info;
+        SYSTEM_INFO sys_info;      
         GetSystemInfo(&sys_info);
 
         wsprintf(output, TEXT("Number of processors: %u\n"), sys_info.dwNumberOfProcessors);
