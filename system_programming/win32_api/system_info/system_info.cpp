@@ -110,7 +110,6 @@ int main() {
                 WriteConsole(hConsole, TEXT("Closing program...\n"), 20, NULL, NULL);
                 return 0;
             default:
-                WriteConsole(hConsole, TEXT("Invalid choice. Please choose a valid option.\n"), 47, NULL, NULL);
                 break;
         }
     }
