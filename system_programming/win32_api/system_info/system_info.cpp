@@ -77,8 +77,57 @@ namespace second_task {
     }
 }
 
+namespace third_task {
+
+    void mouse_and_keyboard_info(HANDLE hConsole) {
+        TCHAR output[256];
+        HANDLE hInput = GetStdHandle(STD_INPUT_HANDLE);
+        SetConsoleMode(hInput, ENABLE_WINDOW_INPUT | ENABLE_MOUSE_INPUT);
+
+        INPUT_RECORD inputRecord;
+        DWORD events;
+
+        while (true) {
+            ReadConsoleInput(hInput, &inputRecord, 1, &events);
+
+            if (inputRecord.EventType == KEY_EVENT && inputRecord.Event.KeyEvent.bKeyDown) {
+                KEY_EVENT_RECORD& keyEvent = inputRecord.Event.KeyEvent;
+
+                COORD keyPos = { 0, 0 };
+                SetConsoleCursorPosition(hConsole, keyPos);
+
+                wsprintf(output, TEXT("ScanCode: %3u | ASCII: %3u\n"),
+                         keyEvent.wVirtualScanCode,
+                         keyEvent.uChar.AsciiChar);
+                WriteConsole(hConsole, output, lstrlen(output), NULL, NULL);
+
+                COORD ctrlPos = { 0, 1 };
+                SetConsoleCursorPosition(hConsole, ctrlPos);
+
+                wsprintf(output, TEXT("CTRL: %s SHIFT: %s ALT: %s\n"),
+                         (keyEvent.dwControlKeyState & (LEFT_CTRL_PRESSED | RIGHT_CTRL_PRESSED)) ? TEXT("Yes") : TEXT("No"),
+                         (keyEvent.dwControlKeyState & SHIFT_PRESSED) ? TEXT("Yes") : TEXT("No"),
+                         (keyEvent.dwControlKeyState & (LEFT_ALT_PRESSED | RIGHT_ALT_PRESSED)) ? TEXT("Yes") : TEXT("No"));
+                WriteConsole(hConsole, output, lstrlen(output), NULL, NULL);
+            }
+            else if (inputRecord.EventType == MOUSE_EVENT) {
+                MOUSE_EVENT_RECORD& mouseEvent = inputRecord.Event.MouseEvent;
+
+                COORD mousePos = { 0, 3 };
+                SetConsoleCursorPosition(hConsole, mousePos);
+
+                wsprintf(output, TEXT("Mouse Position - X: %3d Y: %3d\n"),
+                         mouseEvent.dwMousePosition.X,
+                         mouseEvent.dwMousePosition.Y);
+                WriteConsole(hConsole, output, lstrlen(output), NULL, NULL);
+            }
+        }
+    }
+}
+
+
 void show_menu(HANDLE hConsole, TCHAR* output) {
-    const TCHAR *menu = TEXT("\n\t\tMENU\t\t\n1. First task\n2. Second task\n3. Exit\n\n");
+    const TCHAR *menu = TEXT("\n\n\n\n\n\t\tMENU\t\t\n1. First task\n2. Second task\n3. Third task\n4. Exit\n\n");
     WriteConsole(hConsole, menu, lstrlen(menu), NULL, NULL);
 }
 
@@ -107,6 +156,10 @@ int main() {
                 second_task::print_metrics(hConsole, output);
                 break;
             case 3:
+                WriteConsole(hConsole, TEXT("\nThird Task:\n"), 14, NULL, NULL);
+                third_task::mouse_and_keyboard_info(hConsole);
+                break;
+            case 4:
                 WriteConsole(hConsole, TEXT("Closing program...\n"), 20, NULL, NULL);
                 return 0;
             default:
