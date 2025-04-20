@@ -1,0 +1,30 @@
+#include "resource.h"
+#include <windows.h>
+
+IDI_MYICON ICON "icon.ico"
+IDC_MYCURSOR CURSOR "cursor.cur"
+IDB_MYBITMAP BITMAP "image.bmp"
+
+IDR_MYMENU MENU
+BEGIN
+    POPUP "File"
+    BEGIN
+        MENUITEM "Open", IDM_FILE_OPEN
+        MENUITEM "Exit", IDM_FILE_EXIT
+    END
+    POPUP "Help"
+    BEGIN
+        MENUITEM "About", IDM_HELP_ABOUT
+        MENUITEM "MessageBox", IDM_CUSTOM_MESSAGE
+    END
+END
+
+IDD_MYDIALOG DIALOGEX 0, 0, 200, 150
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "My Dialog"
+FONT 8, "MS Shell Dlg"
+BEGIN
+    DEFPUSHBUTTON "OK", IDOK, 50, 120, 50, 14
+    PUSHBUTTON "Cancel", IDCANCEL, 110, 120, 50, 14
+    CONTROL "", IDC_STATIC_IMAGE, "Static", SS_BITMAP | WS_CHILD | WS_VISIBLE, 50, 20, 100, 80
+END
