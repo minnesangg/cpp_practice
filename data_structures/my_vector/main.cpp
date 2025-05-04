@@ -20,7 +20,6 @@ int main() {
             vec.push_back(40);
         }
 
-
         std::cout << "After push_back: ";
         print_vector(vec);
 
