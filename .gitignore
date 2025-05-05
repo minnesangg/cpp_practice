@@ -16,6 +16,24 @@ practice/OOP/Farm/build/
 practice/task_manager/include/json.hpp
 practice/task_manager/build
 
+*.so
+*.ico
+*.bmp
+*.o
+
+data_structures/BST/bst
+practice/multithreading/ATM/atm
+practice/multithreading/Cafe/cafe
+practice/multithreading/basic/first_task
+practice/multithreading/basic/zero_task
+practice/multithreading/fileLoader_simulator/simulation
+practice/multithreading/tasks_queue/tasks
+system_programming/my_library/libConsoleIO.so
+system_programming/my_library/libmylib.so
+system_programming/my_library/main_console
+system_programming/my_library/main_dynamic
+system_programming/my_library/main_static
+
 
 data_structures/my_vector/build/
 algorithms/theory_of_algs/lab1/lab1
