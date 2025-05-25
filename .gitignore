@@ -20,6 +20,7 @@ practice/task_manager/build
 *.ico
 *.bmp
 *.o
+*.txt
 
 data_structures/BST/bst
 practice/multithreading/ATM/atm
