@@ -34,6 +34,11 @@ system_programming/my_library/libmylib.so
 system_programming/my_library/main_console
 system_programming/my_library/main_dynamic
 system_programming/my_library/main_static
+system_programming/readWrite/fifth_task/creatingDir
+system_programming/readWrite/first_task/copyC
+system_programming/readWrite/fourth_task/pathFinder
+patterns/creational/singleton/singleton
+
 
 
 data_structures/my_vector/build/
