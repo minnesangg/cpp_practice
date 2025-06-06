@@ -40,6 +40,8 @@ system_programming/readWrite/fourth_task/pathFinder
 patterns/creational/singleton/singleton
 patterns/creational/factoryMethod/factoryMethod
 system_programming/processes/cat
+patterns/creational/abstractFactory/abstractFactory
+
 
 data_structures/my_vector/build/
 algorithms/theory_of_algs/lab1/lab1
