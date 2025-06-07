@@ -43,6 +43,7 @@ system_programming/processes/cat
 patterns/creational/abstractFactory/abstractFactory
 patterns/creational/builder/builder
 patterns/creational/prototype/prototype
+patterns/structural/adapter/adapter
 
 
 data_structures/my_vector/build/
