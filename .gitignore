@@ -41,6 +41,8 @@ patterns/creational/singleton/singleton
 patterns/creational/factoryMethod/factoryMethod
 system_programming/processes/cat
 patterns/creational/abstractFactory/abstractFactory
+patterns/creational/builder/builder
+patterns/creational/prototype/prototype
 
 
 data_structures/my_vector/build/
