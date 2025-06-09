@@ -44,6 +44,7 @@ patterns/creational/abstractFactory/abstractFactory
 patterns/creational/builder/builder
 patterns/creational/prototype/prototype
 patterns/structural/adapter/adapter
+patterns/structural/bridge/bridge
 
 
 data_structures/my_vector/build/
