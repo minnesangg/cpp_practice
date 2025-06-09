@@ -45,6 +45,7 @@ patterns/creational/builder/builder
 patterns/creational/prototype/prototype
 patterns/structural/adapter/adapter
 patterns/structural/bridge/bridge
+patterns/structural/composite/composite
 
 
 data_structures/my_vector/build/
