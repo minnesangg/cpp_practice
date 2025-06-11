@@ -46,6 +46,8 @@ patterns/creational/prototype/prototype
 patterns/structural/adapter/adapter
 patterns/structural/bridge/bridge
 patterns/structural/composite/composite
+patterns/structural/decorator/decorator
+patterns/structural/facade/facade
 
 
 data_structures/my_vector/build/
