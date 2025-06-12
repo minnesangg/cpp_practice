@@ -49,6 +49,7 @@ patterns/structural/composite/composite
 patterns/structural/decorator/decorator
 patterns/structural/facade/facade
 patterns/structural/flyweight/flyweight
+patterns/structural/proxy/proxy
 
 
 data_structures/my_vector/build/
