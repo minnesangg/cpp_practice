@@ -50,6 +50,7 @@ patterns/structural/decorator/decorator
 patterns/structural/facade/facade
 patterns/structural/flyweight/flyweight
 patterns/structural/proxy/proxy
+practice/sysInfo/procChecker
 
 
 data_structures/my_vector/build/
