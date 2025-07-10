@@ -52,6 +52,7 @@ patterns/structural/flyweight/flyweight
 patterns/structural/proxy/proxy
 practice/sysInfo/procChecker
 patterns/behavioral/CoR/chain
+patterns/behavioral/observer/observer
 
 practice/spectrum/build
 data_structures/my_vector/build/
