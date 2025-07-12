@@ -53,6 +53,7 @@ patterns/structural/proxy/proxy
 practice/sysInfo/procChecker
 patterns/behavioral/CoR/chain
 patterns/behavioral/observer/observer
+patterns/behavioral/command/command
 
 practice/spectrum/build
 data_structures/my_vector/build/
