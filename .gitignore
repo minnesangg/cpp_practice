@@ -54,6 +54,9 @@ practice/sysInfo/procChecker
 patterns/behavioral/CoR/chain
 patterns/behavioral/observer/observer
 patterns/behavioral/command/command
+practice/Pracs/sobesVector
+practice/Pracs/vectorDelDubl
+
 
 practice/spectrum/build
 data_structures/my_vector/build/
