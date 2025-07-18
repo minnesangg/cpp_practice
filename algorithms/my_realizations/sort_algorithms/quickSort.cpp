@@ -3,7 +3,7 @@
 
 using namespace std;
 
-vector<int> quickSort(vector<int> nums)
+vector<int> quickSort(const vector<int>& nums)
 {
     int size = nums.size();
     if (size < 2)
@@ -15,8 +15,10 @@ vector<int> quickSort(vector<int> nums)
     vector<int> less;
     vector<int> greater;
 
-    for (int i = 1; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
+        if(i == pivotIndex) continue;
+
         if (nums[i] <= pivot)
         {
             less.push_back(nums[i]);
