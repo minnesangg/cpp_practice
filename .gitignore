@@ -61,6 +61,7 @@ practice/Pracs/sobesPrac
 algorithms/my_realizations/sort_algorithms/bubbleSort
 algorithms/my_realizations/sort_algorithms/quickSort
 patterns/behavioral/interprenter/inter
+patterns/behavioral/iterator/iterator
 
 practice/spectrum/build
 data_structures/my_vector/build/
