@@ -65,6 +65,8 @@ algorithms/my_realizations/sort_algorithms/quickSort
 patterns/behavioral/interprenter/inter
 patterns/behavioral/iterator/iterator
 patterns/behavioral/mediator/mediator
+patterns/behavioral/memento/memento
+
 practice/spectrum/build
 data_structures/my_vector/build/
 algorithms/theory_of_algs/lab1/lab1
