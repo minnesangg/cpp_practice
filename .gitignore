@@ -67,6 +67,7 @@ patterns/behavioral/iterator/iterator
 patterns/behavioral/mediator/mediator
 patterns/behavioral/memento/memento
 patterns/behavioral/state/state
+patterns/behavioral/strategy/strategy
 
 practice/spectrum/build
 data_structures/my_vector/build/
