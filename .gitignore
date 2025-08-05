@@ -72,6 +72,7 @@ practice/multithreading/smallPracs/arraySum
 practice/multithreading/smallPracs/counter
 practice/multithreading/smallPracs/threadId
 patterns/behavioral/templateMethod/templMethod
+patterns/behavioral/visitor/visitor
 
 practice/spectrum/build
 data_structures/my_vector/build/
