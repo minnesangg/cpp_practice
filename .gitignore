@@ -15,6 +15,8 @@ practice/OOP/Vehicles/build/
 practice/OOP/Cafe/build/
 practice/OOP/Farm/build/
 
+practice/tests/
+
 practice/task_manager/include/json.hpp
 practice/task_manager/build
 
@@ -78,3 +80,5 @@ practice/spectrum/build
 data_structures/my_vector/build/
 algorithms/theory_of_algs/lab1/lab1
 
+practice/OOP/BooksStore/CMakeLists.txt.user
+practice/Pracs/topElemets
